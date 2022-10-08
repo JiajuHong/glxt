@@ -1,0 +1,112 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url("/images/bg.jpg");
+    background-size: 100% 100%;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+}
+
+.title {
+    color: #F0FFFF;
+    text-align: center;
+    margin: auto;
+    padding-top: 150px;
+    padding-bottom: 20px;
+}
+
+#login {
+    width: 350px;
+    height: 250px;
+    background: #c5e6f8aa;
+    border-radius: 15px;
+    margin: auto auto;
+}
+
+.logform {
+    width: 100%;
+    height: 50px;
+    background: #c5e6f8aa;
+    float: left;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    line-height: 50px;
+}
+
+.loginput {
+    width: 280px;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.button {
+    padding-left: 110px;
+}
+
+.year {
+    width: 280px;
+    height: 50px;
+    margin-left: 30px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.lang {
+    width: 280px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+
+input[type='text'] {
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 3px 0px;
+    width: 210px;
+    font-size: 18px;
+    font-family: "Microsoft soft";
+}
+
+input[type='password'] {
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 3px 0px;
+    width: 210px;
+    font-size: 18px;
+    font-family: "Microsoft soft";
+}
+
+/*input[type='submit'] {*/
+/*    outline-style: none;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 7px;*/
+/*    font-size: 15px;*/
+/*    font-family: "Microsoft soft";*/
+/*}*/
+
+/*input[type='reset'] {*/
+/*    outline-style: none;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 7px;*/
+/*    font-size: 15px;*/
+/*    font-family: "Microsoft soft";*/
+/*}*/

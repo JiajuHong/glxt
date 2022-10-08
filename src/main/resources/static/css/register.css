@@ -1,0 +1,91 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("/images/bg.jpg");
+    background-size: 100% 100%;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+}
+
+#login {
+    width: 350px;
+    height: 350px;
+    background: #c5e6f8aa;
+    border-radius: 15px;
+    margin: 250px auto;
+}
+
+.logform {
+    width: 100%;
+    height: 50px;
+    background: #c5e6f8aa;
+    float: left;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    line-height: 50px;
+}
+
+.loginput {
+    width: 30%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    clear: right;
+}
+
+.right {
+    width: 70%;
+    height: 40px;
+    text-align: left;
+    line-height: 40px;
+    float: left;
+    clear: right;
+}
+
+input[type='text'] {
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 3px 0px;
+    width: 210px;
+    font-size: 18px;
+    font-family: "Microsoft soft";
+}
+
+input[type='password'] {
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 3px 0px;
+    width: 210px;
+    font-size: 18px;
+    font-family: "Microsoft soft";
+}
+
+input[type='button'] {
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: "Microsoft soft";
+}
+
+input[type='reset'] {
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: "Microsoft soft";
+}
+
+select {
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: "Microsoft soft";
+}

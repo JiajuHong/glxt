@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <title>login</title>
+</head>
+
+<body>
+<div class="title">
+    <h1 th:text="#{login.title}"></h1>
+</div>
+<div id="login">
+<form action="/gologin" method="post">
+    <div class="logform" th:text="#{login.tip}"></div>
+    <div class="loginput"><input type="text" class="form-control" name="name" id="name"
+                                 th:placeholder="#{login.username}"></div>
+    <div class="loginput"><input type="password" class="form-control" name="password" id="password"
+                                 th:placeholder="#{login.password}"></div>
+    <div class="button"><input type="submit" class="btn btn-info btn-xs" th:value="#{login.button}">&nbsp;<input
+            type="reset" class="btn btn-info btn-xs" th:value="#{login.cancel}">&nbsp;<a
+            href="/register"><span th:text="#{login.register}"></span></a>
+    </div>
+    <div class="year"><span th:text="${currentYear}"></span>
+        -<span th:text="${currentYear} + 1"></span>
+        <span>CopyRight</span></div>
+    <div class="lang">
+        <a th:href="@{/login(lang='zh_CN')}">中文</a>
+        <a th:href="@{/login(lang='en_US')}">English</a>
+    </div>
+</form>
+</div>
+
+
+<!--    <div id="login">-->
+<!--        <form action="/gologin" method="post">-->
+<!--            <div class="logform" th:text="#{login.tip}"></div>-->
+<!--            <div class="loginput"><span th:text="#{login.username}"></span><input type="text" name="name" id="name" th:placeholder="#{login.username}"></div>-->
+<!--            <div class="loginput"><span th:text="#{login.password}"></span><input type="password" name="password" id="password" th:placeholder="#{login.password}"></div>-->
+<!--            <div class="loginput"><input type="submit" th:value="#{login.button}">&nbsp;<input type="reset" th:value="#{login.cancel}"><a-->
+<!--                    href="/register"><span th:text="#{login.register}"></span></a>-->
+<!--            </div>-->
+<!--            <div class="loginput"><span th:text="${currentYear}"></span>-->
+<!--                -<span th:text="${currentYear} + 1"></span>-->
+<!--                <span>CopyRight</span></div>-->
+<!--            <div class="loginput">-->
+<!--                <a th:href="@{/login(lang='zh_CN')}">中文</a>-->
+<!--                <a th:href="@{/login(lang='en_US')}">English</a>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+</body>
+
+</html>

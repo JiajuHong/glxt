@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap-theme.css"/>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"> <img alt="Brand" src="../static/images/2.jpg"
+                                                               th:src="@{/images/2.jpg}"
+                                                               style="width:50px;height:35px"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/index">首页 <span class="sr-only">(current)</span></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">查询 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/search">查询演示</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">查询二</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">查询三</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">编辑 <span class="sr-only">(current)</span></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#" th:text="'用户名：' + ${session.currentuser}">用户名</a></li>
+                            <li><a href="/login">注销</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-2 column">
+            <ul class="nav nav-pills nav-stacked" id="public-left">
+                <li class="nav-header">分区一</li>
+                <li class="navbar-link"><a href="#">模块一</a></li>
+                <li class="navbar-link"><a href="#">模块二</a></li>
+                <li class="navbar-link"><a href="#">模块三</a></li>
+                <li class="nav-header">分区二</li>
+                <li class="navbar-link"><a href="#">文件上传</a></li>
+                <li class="navbar-link"><a href="#">文件下载</a></li>
+                <li class="navbar-link"><a href="#">其他功能</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10 column">
+            <div id="public_right" th:include="::public_right">
+                <h2>这是publicpage.html内容</h2>
+                <p>
+                    public_right, 这部分内容可根据所显示内容不同，动态调整。
+                </p>
+                <p>
+                    <a class="btn" href="#">Details =></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="dol-md-12 column text-center">
+            <hr>
+            <p>
+                @2022-2023 CopyRight
+            </p>
+            <p>
+                <a class="btn" href="mailto:1965518422@qq.com">联系我:LeslieH@163.com</a>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

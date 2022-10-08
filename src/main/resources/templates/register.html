@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/register.css}">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+    <title>register</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="login">
+        <form>
+            <div class="logform">用户注册</div>
+            <div class="loginput">用户名</div>
+            <div class="right"><input type="text" name="name" id="name" placeholder="请输入姓名"></div>
+            <div class="loginput">密码</div>
+            <div class="right"><input type="password" name="password" id="password" placeholder="请输入密码"></div>
+            <div class="loginput">确认密码</div>
+            <div class="right"><input type="password" name="password" id="password2" placeholder="请确认密码"></div>
+            <div class="loginput">性别</div>
+            <div class="right"><input type="radio" value="男" name="sex" checked="checked">男
+                <input type="radio" name="sex" value="女">女
+            </div>
+            <div class="loginput">籍贯</div>
+            <div class="right">
+                <select id="native">
+                    <option value="">请选择</option>
+                    <option value="jiangsu">江苏</option>
+                    <option value="zhejiang">浙江</option>
+                    <option value="anhui">安徽</option>
+                </select>
+            </div>
+            <div class="loginput">爱好</div>
+            <div class="right">
+                <input type="checkbox" name="hobby" value="唱">唱
+                <input type="checkbox" name="hobby" value="跳">跳
+                <input type="checkbox" name="hobby" value="rap">rap
+                <input type="checkbox" name="hobby" value="篮球">篮球
+            </div>
+            <div class="loginput"></div>
+            <div><input type="button" value="注册" onclick="mydata()">&nbsp;<input type="reset" value="重置"></div>
+        </form>
+    </div>
+
+<script>
+    function mydata() {
+        var love = "";
+        var name = $('#name').val();
+        var password = $('#password').val();
+        var password2 = $('#password2').val();
+        var sex = $("input[name='sex']:checked").val();
+        var nativeplace = $("#native").val();
+        var hobby = $("input[name='hobby']");
+        for (i in hobby) {
+            if (hobby[i].checked) {
+                love += hobby[i].value + " "
+            }
+        }
+        // alert("用户名: " + name + " 密码: " + password + " 性别: " + sex + " 籍贯: " + nativeplace + " 爱好: " + love)
+        // alert("爱好: " + love)
+
+        if (password === password2) {
+            // alert("两次密码一致");
+            $.post("/goregister", {name:name, password:password})
+        }else{
+            alert("两次密码不一致!");
+        }
+    }
+</script>
+</body>
+
+</html>
