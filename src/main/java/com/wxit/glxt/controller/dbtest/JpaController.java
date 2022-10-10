@@ -1,4 +1,4 @@
-package com.wxit.glxt.controller;
+package com.wxit.glxt.controller.dbtest;
 
 
 import com.wxit.glxt.model.JPABean;
@@ -6,13 +6,14 @@ import com.wxit.glxt.repository.JPARepository;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.transaction.Transactional;
+
 import java.util.List;
 import java.util.Optional;
 
