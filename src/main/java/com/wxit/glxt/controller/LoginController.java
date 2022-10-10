@@ -1,17 +1,24 @@
 package com.wxit.glxt.controller;
 
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
 
 //@RestController
 @Controller
 public class LoginController {
+    @Resource
+    JdbcTemplate jdbcTemplate;
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
@@ -46,5 +53,12 @@ public class LoginController {
     @GetMapping("/search")
     public String search() {
         return "search";
+    }
+
+    @GetMapping("/Temp_All_result")
+    public String Temp_All_result(Model m) {
+        List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from tbluser");
+        m.addAttribute("Result", list);
+        return "result";
     }
 }
