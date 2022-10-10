@@ -15,8 +15,6 @@ import java.util.Map;
 
 @Controller
 public class LoginController {
-    @Resource
-    JdbcTemplate jdbcTemplate;
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
