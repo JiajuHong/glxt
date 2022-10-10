@@ -1,7 +1,7 @@
 package com.wxit.glxt.controller.dbtest;
 
 
-import com.wxit.glxt.model.UserBean;
+import com.wxit.glxt.model.domain.UserBean;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;

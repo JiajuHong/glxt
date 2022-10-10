@@ -1,6 +1,7 @@
 package com.wxit.glxt;
 
-import com.wxit.glxt.model.UserBean;
+import com.wxit.glxt.mapper.UserMapper;
+import com.wxit.glxt.model.domain.UserBean;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,9 @@ class GlxtApplicationTests {
 
     @Autowired
     DataSource dataSource;
+
+    @Resource
+    private UserMapper userMapper;
 
     @Test
     void contextLoads() {
@@ -77,5 +81,12 @@ class GlxtApplicationTests {
         jdbcTemplate.update(sql);
         System.out.println("修改成功");
     }
+
+    @Test
+    public void testMybatFindall() {
+        List<UserBean> list = userMapper.findAll();
+        System.out.println(list);
+    }
+
 
 }

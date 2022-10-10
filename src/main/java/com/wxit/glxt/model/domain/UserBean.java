@@ -1,4 +1,4 @@
-package com.wxit.glxt.model;
+package com.wxit.glxt.model.domain;
 
 import java.io.Serializable;
 

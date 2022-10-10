@@ -1,6 +1,6 @@
 package com.wxit.glxt.repository;
 
-import com.wxit.glxt.model.JPABean;
+import com.wxit.glxt.model.domain.JPABean;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

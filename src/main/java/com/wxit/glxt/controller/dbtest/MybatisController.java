@@ -1,6 +1,6 @@
 package com.wxit.glxt.controller.dbtest;
 
-import com.wxit.glxt.model.UserBean;
+import com.wxit.glxt.model.domain.UserBean;
 import com.wxit.glxt.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

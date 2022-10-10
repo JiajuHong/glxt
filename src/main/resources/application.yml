@@ -22,4 +22,4 @@ server:
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapping.xml
-  type-aliases-package: com.wxit.glxt.model
+  type-aliases-package: com.wxit.glxt.model.domain

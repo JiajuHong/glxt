@@ -1,7 +1,7 @@
 package com.wxit.glxt.controller.dbtest;
 
 
-import com.wxit.glxt.model.JPABean;
+import com.wxit.glxt.model.domain.JPABean;
 import com.wxit.glxt.repository.JPARepository;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;

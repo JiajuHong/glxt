@@ -1,6 +1,6 @@
 package com.wxit.glxt.service;
 
-import com.wxit.glxt.model.UserBean;
+import com.wxit.glxt.model.domain.UserBean;
 
 import java.util.List;
 
