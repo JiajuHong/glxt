@@ -1,5 +1,6 @@
 package com.wxit.glxt;
 
+import com.wxit.glxt.mapper.CommentMapper;
 import com.wxit.glxt.mapper.UserMapper;
 import com.wxit.glxt.model.domain.UserBean;
 import org.junit.jupiter.api.Test;
@@ -22,13 +23,16 @@ class GlxtApplicationTests {
     DataSource dataSource;
 
     @Resource
+    CommentMapper commentMapper;
+
+    @Resource
     private UserMapper userMapper;
 
     @Test
     void contextLoads() {
         Connection conn = null;
         try {
-            conn =dataSource.getConnection();
+            conn = dataSource.getConnection();
             System.out.println(conn);
         } catch (SQLException e) {
             throw new RuntimeException("连接失败！！！", e);
@@ -89,4 +93,28 @@ class GlxtApplicationTests {
     }
 
 
+    @Test
+    public void selectComment() {
+        UserBean user = commentMapper.findbyId(10);
+        System.out.println(user);
+    }
+
+    @Test
+    public void insertComment() {
+        commentMapper.insert("a", "a", "普通用户");
+        System.out.println("写入成功");
+    }
+
+    @Test
+    public void deleteComment() {
+        commentMapper.delete(26);
+        System.out.println("删除成功");
+    }
+
+
+    @Test
+    public void updateComment() {
+        commentMapper.update("a02", "123", "管理员", 32);
+        System.out.println("修改成功");
+    }
 }
