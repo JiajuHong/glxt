@@ -6,4 +6,8 @@
     <select id="findAll" resultType="com.wxit.glxt.model.domain.UserBean">
         select * from tbluser
     </select>
+
+    <select id="login" resultType="com.wxit.glxt.model.domain.UserBean">
+        select * from tbluser where userName = #{userName} and userPass = #{userPass}
+    </select>
 </mapper>
