@@ -36,4 +36,14 @@ public class UserServiceImpl implements UserService {
     public int delUser(int id) {
         return userMapper.delUser(id);
     }
+
+    @Override
+    public int updateUser(UserBean user) {
+        return userMapper.updateUser(user);
+    }
+
+    @Override
+    public UserBean findByid(int id) {
+        return userMapper.findByid(id);
+    }
 }

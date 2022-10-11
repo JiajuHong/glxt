@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="publicpage(title='用户编辑')">
+<meta charset="UTF-8">
+<div th:fragment="public_right">
+    <form action="/update" method="get">
+        <h2>修改页面</h2>
+        <input type="hidden" name="id" id="id" th:value="${User.id}"><br><br>
+        请输入姓名:<input id="name" name="name" type="text" th:value="${User.userName}"><br><br>
+        请输入密码:<input id="pass" name="pass" type="text" th:value="${User.userPass}"><br><br>
+        请选择身份:<select id="role" name="role">
+        <option th:value="${User.userRole}" selected><p th:text="${User.userRole}"></option>
+        <optin value="管理员">管理员</optin>
+        <optin value="普通用户">普通用户</optin>
+    </select><br><br>
+        <input type="submit" value="修改">
+        <button name="button" onclick="javascript:history.go(-1);">返回</button>
+    </form>
+</div>
+</html>

@@ -15,6 +15,12 @@ public interface UserMapper {
     // 注册
     int register(UserBean users);
 
+    // 根据id查询
+    UserBean findByid(int id);
+
     // 删除
     int delUser(int id);
+
+    // 修改
+    int updateUser(UserBean users);
 }

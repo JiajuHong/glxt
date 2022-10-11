@@ -7,6 +7,10 @@
         select * from tbluser
     </select>
 
+    <select id="findByid" resultType="com.wxit.glxt.model.domain.UserBean">
+        select * from tbluser where id = #{id}
+    </select>
+
     <select id="login" resultType="com.wxit.glxt.model.domain.UserBean">
         select * from tbluser where userName = #{userName} and userPass = #{userPass}
     </select>
@@ -18,4 +22,8 @@
     <delete id="delUser" parameterType="com.wxit.glxt.model.domain.UserBean">
         delete from tbluser where id=#{id}
     </delete>
+
+    <update id="updateUser" parameterType="com.wxit.glxt.model.domain.UserBean">
+        update tbluser set userName = #{userName}, userPass=#{userPass}, userRole=#{userRole} where id=#{id}
+    </update>
 </mapper>

@@ -16,4 +16,9 @@ public interface UserService {
     // 删除用户
     int delUser(int id);
 
+    // 修改用户
+    int updateUser(UserBean user);
+
+    UserBean findByid(int id);
+
 }
