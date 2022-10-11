@@ -14,4 +14,7 @@ public interface UserMapper {
 
     // 注册
     int register(UserBean users);
+
+    // 删除
+    int delUser(int id);
 }

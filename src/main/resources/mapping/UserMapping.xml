@@ -14,4 +14,8 @@
     <insert id="register" parameterType="com.wxit.glxt.model.domain.UserBean" useGeneratedKeys="true" keyProperty="id">
         insert into tbluser(userName, userPass, userRole) values(#{userName}, #{userPass}, #{userRole});
     </insert>
+
+    <delete id="delUser" parameterType="com.wxit.glxt.model.domain.UserBean">
+        delete from tbluser where id=#{id}
+    </delete>
 </mapper>

@@ -31,4 +31,9 @@ public class UserServiceImpl implements UserService {
     public int register(UserBean users) {
         return userMapper.register(users);
     }
+
+    @Override
+    public int delUser(int id) {
+        return userMapper.delUser(id);
+    }
 }

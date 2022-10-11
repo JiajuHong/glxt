@@ -5,12 +5,15 @@ import com.wxit.glxt.model.domain.UserBean;
 import java.util.List;
 
 public interface UserService {
-    public List<UserBean> findAll();
+    List<UserBean> findAll();
 
     // 注册
-    public UserBean login(String userName, String userPass);
+    UserBean login(String userName, String userPass);
 
     // 登录
-    public int register(UserBean users);
+    int register(UserBean users);
+
+    // 删除用户
+    int delUser(int id);
 
 }
