@@ -10,4 +10,8 @@
     <select id="login" resultType="com.wxit.glxt.model.domain.UserBean">
         select * from tbluser where userName = #{userName} and userPass = #{userPass}
     </select>
+
+    <insert id="register" parameterType="com.wxit.glxt.model.domain.UserBean" useGeneratedKeys="true" keyProperty="id">
+        insert into tbluser(userName, userPass, userRole) values(#{userName}, #{userPass}, #{userRole});
+    </insert>
 </mapper>

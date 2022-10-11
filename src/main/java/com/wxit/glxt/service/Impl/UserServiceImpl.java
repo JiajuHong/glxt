@@ -26,4 +26,9 @@ public class UserServiceImpl implements UserService {
     public UserBean login(String userName, String userPass) {
         return userMapper.login(userName, userPass);
     }
+
+    @Override
+    public int register(UserBean users) {
+        return userMapper.register(users);
+    }
 }

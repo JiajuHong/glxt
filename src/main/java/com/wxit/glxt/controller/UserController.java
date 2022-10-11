@@ -1,14 +1,27 @@
 package com.wxit.glxt.controller;
 
-import org.springframework.stereotype.Controller;
+import com.wxit.glxt.model.domain.UserBean;
+import com.wxit.glxt.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 @RestController
 public class UserController {
+
+    @Resource
+    private UserService userServiceImpl;
+
+
     @PostMapping("/goregister")
-    public String goregister(@RequestParam("name") String uname, @RequestParam("password") String upass) {
-        return "name:"+uname+", password:"+upass+"";
+    public int goregister(UserBean users, @RequestParam("name") String uname, @RequestParam("password") String upass) {
+        System.out.println("name:" + uname + ", password:" + upass);
+        users.setUserName(uname);
+        users.setUserPass(upass);
+        users.setUserRole("普通用户");
+        userServiceImpl.register(users);
+        return 1;
     }
 }

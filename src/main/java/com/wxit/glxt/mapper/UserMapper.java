@@ -9,5 +9,9 @@ import java.util.List;
 public interface UserMapper {
     List<UserBean> findAll();
 
+    // 登录
     UserBean login(String userName, String userPass);
+
+    // 注册
+    int register(UserBean users);
 }

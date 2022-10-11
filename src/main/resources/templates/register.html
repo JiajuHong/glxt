@@ -67,7 +67,14 @@
 
         if (password === password2) {
             // alert("两次密码一致");
-            $.post("/goregister", {name:name, password:password})
+            $.post("/goregister", {name: name, password: password}, function (result) {
+                if (result == true) {
+                    alert("注册成功!");
+                    window.location.href = "/login";
+                } else {
+                    alert("注册失败!");
+                }
+            })
         }else{
             alert("两次密码不一致!");
         }
