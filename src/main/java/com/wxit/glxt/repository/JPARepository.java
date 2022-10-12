@@ -19,9 +19,10 @@ public interface JPARepository extends JpaRepository<JPABean, Integer> {
 
     /**
      * 根据用户角色查询
+     *
      * @param Role
      */
-    List<JPABean> findByuserRole(String Role);
+    List<JPABean> findByUserRole(String Role);
 
     @Query("from tbluser where userName = ?1 order by id desc")
     List<JPABean> listByName(String name);

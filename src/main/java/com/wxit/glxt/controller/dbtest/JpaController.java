@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +47,7 @@ public class JpaController {
     @ResponseBody
     @GetMapping("/JPA_Role/{role}")
     public List<JPABean> jpa_role(@PathVariable String role, Model m) {
-        List<JPABean> UserList = rep.findByuserRole(role);
+        List<JPABean> UserList = rep.findByUserRole(role);
         m.addAttribute("Result", UserList);
         return UserList;
     }
