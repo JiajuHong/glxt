@@ -11,10 +11,11 @@ public interface JPARepository extends JpaRepository<JPABean, Integer> {
 
     /**
      * 根据用户名查询
+     *
      * @param name
      * @return List
      */
-    List findByUserName(String name);
+    List<JPABean> findByUserName(String name);
 
     /**
      * 根据用户角色查询
