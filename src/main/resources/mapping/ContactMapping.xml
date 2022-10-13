@@ -6,4 +6,8 @@
     <select id="contTable" resultType="map">
         select * from tblcontact
     </select>
+
+    <select id="contChart" resultType="map">
+        select contNative, COUNT(contNative) as value from tblcontact group by contNative
+    </select>
 </mapper>

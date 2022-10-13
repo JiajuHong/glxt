@@ -5,4 +5,6 @@ import java.util.List;
 
 public interface ContactService {
     List contTable();
+
+    List contChart();
 }

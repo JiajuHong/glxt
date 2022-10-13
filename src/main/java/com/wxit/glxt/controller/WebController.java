@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -105,6 +107,20 @@ public class WebController {
         List UserList = contactServiceImpl.contTable();
         m.addAttribute("Result", UserList);
         return "mypage";
+    }
+
+    @GetMapping("/tochart")
+    public String tochart() {
+        return "contchart";
+    }
+
+    @RequestMapping("/gochart")
+    @ResponseBody
+    public List gochart(Model m) {
+        List UserList = contactServiceImpl.contChart();
+        m.addAttribute("Result", UserList);
+        System.out.println(UserList);
+        return UserList;
     }
 
 }
