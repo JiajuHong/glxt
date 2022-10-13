@@ -1,5 +1,6 @@
 package com.wxit.glxt.controller;
 
+import com.wxit.glxt.service.ContactService;
 import org.apache.commons.io.FileUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -11,14 +12,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
 public class WebController {
+
+    @Resource
+    private ContactService contactServiceImpl;
+
+
     @GetMapping("/toupload")
     public String toupload() {
         return "upload";
@@ -90,6 +98,13 @@ public class WebController {
         }
         // 火狐等其他浏览器统一为ISO-8859-1编码显示
         return new String(filename.getBytes("UTF-8"), "ISO-8859-1");
+    }
+
+    @GetMapping("/all_page")
+    public String all_page(Model m) {
+        List UserList = contactServiceImpl.contTable();
+        m.addAttribute("Result", UserList);
+        return "mypage";
     }
 
 }
