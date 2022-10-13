@@ -18,6 +18,7 @@ public class TemplateController {
     @Resource
     JdbcTemplate jdbcTemplate;
 
+    @ResponseBody
     @GetMapping("Temp_All")
     public List<Map<String, Object>> Temp_All(Model m) {
         List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from tbluser");
@@ -32,7 +33,6 @@ public class TemplateController {
         BeanPropertyRowMapper<UserBean> rowMapper = new BeanPropertyRowMapper<UserBean>(UserBean.class);
         List<UserBean> UserList = jdbcTemplate.query(sql, rowMapper);
         return UserList;
-
     }
 
 

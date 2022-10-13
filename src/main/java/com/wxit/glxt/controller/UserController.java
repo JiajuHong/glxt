@@ -2,6 +2,7 @@ package com.wxit.glxt.controller;
 
 import com.wxit.glxt.model.domain.UserBean;
 import com.wxit.glxt.service.UserService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,11 @@ public class UserController {
 
     @Resource
     private UserService userServiceImpl;
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "你好 Spring Boot";
+    }
 
 
     @PostMapping("/goregister")

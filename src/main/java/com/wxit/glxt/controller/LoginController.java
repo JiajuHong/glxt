@@ -29,8 +29,17 @@ public class LoginController {
     }
 
     @GetMapping("/register")
-    public String register() { return "register";}
+    public String register() {
+        return "register";
+    }
 
+    /**
+     * @param username
+     * @param password
+     * @param session
+     * @return String
+     * @Author jiaju
+     */
     @PostMapping("/gologin")
     public String gologin(@RequestParam("name") String username, @RequestParam("password") String password, HttpSession session) {
 //        if ("admin".equals(username) && "123".equals(password)) {

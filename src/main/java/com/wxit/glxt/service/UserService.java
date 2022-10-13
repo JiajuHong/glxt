@@ -7,10 +7,10 @@ import java.util.List;
 public interface UserService {
     List<UserBean> findAll();
 
-    // 注册
+    // 登录
     UserBean login(String userName, String userPass);
 
-    // 登录
+    // 注册
     int register(UserBean users);
 
     // 删除用户

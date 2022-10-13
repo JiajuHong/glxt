@@ -66,7 +66,7 @@
         // alert("爱好: " + love)
 
         if (password === password2) {
-            // alert("两次密码一致");
+            alert("两次密码一致");
             $.post("/goregister", {name: name, password: password}, function (result) {
                 if (result == true) {
                     alert("注册成功!");

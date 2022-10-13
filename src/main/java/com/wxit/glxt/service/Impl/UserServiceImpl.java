@@ -22,6 +22,15 @@ public class UserServiceImpl implements UserService {
         return userMapper.findAll();
     }
 
+
+    /**
+     * 登录
+     *
+     * @param userName
+     * @param userPass
+     * @return UserBean
+     * @Author jiaju
+     */
     @Override
     public UserBean login(String userName, String userPass) {
         return userMapper.login(userName, userPass);

@@ -50,7 +50,8 @@ public class MyController {
     }
 
     @GetMapping("/update") // 修改用户
-    public String update(UserBean users, @RequestParam("id") int id, @RequestParam("name") String uname, @RequestParam("pass") String upass, @RequestParam("role") String urole) {
+    public String update(UserBean users, @RequestParam("id") int id, @RequestParam("name") String uname,
+                         @RequestParam("pass") String upass, @RequestParam("role") String urole) {
         users.setId(id);
         users.setUserName(uname);
         users.setUserPass(upass);
