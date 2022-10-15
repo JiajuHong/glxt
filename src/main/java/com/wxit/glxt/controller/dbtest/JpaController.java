@@ -94,8 +94,20 @@ public class JpaController {
         Example<JPABean> example = Example.of(user, matcher);
         List<JPABean> UserList = rep.findAll(example);
         m.addAttribute("Result", UserList);
+        return UserList;
+    }
 
+    @ResponseBody
+    @GetMapping("/JPA_Example/{name}")
+    public List<JPABean> JPA_Example(@PathVariable String name, Model m) {
+        JPABean user = new JPABean();
+        user.setUserName(name);
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withMatcher("userName", ExampleMatcher.GenericPropertyMatchers.startsWith());
 
+        Example<JPABean> example = Example.of(user, matcher);
+        List<JPABean> UserList = rep.findAll(example);
+        m.addAttribute("Result", UserList);
         return UserList;
     }
 
