@@ -16,6 +16,8 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+    show-sql: true
   servlet:
     multipart:
       max-file-size: 100MB

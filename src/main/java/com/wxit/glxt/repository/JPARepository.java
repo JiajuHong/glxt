@@ -1,13 +1,18 @@
 package com.wxit.glxt.repository;
 
 import com.wxit.glxt.model.domain.JPABean;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface JPARepository extends JpaRepository<JPABean, Integer> {
+
+    @Cacheable(cacheNames = "findById")
+    Optional<JPABean> findById(int id);
 
     /**
      * 根据用户名查询
@@ -15,6 +20,8 @@ public interface JPARepository extends JpaRepository<JPABean, Integer> {
      * @param name
      * @return List
      */
+
+    @Cacheable(cacheNames = "findByUserName")
     List<JPABean> findByUserName(String name);
 
     /**

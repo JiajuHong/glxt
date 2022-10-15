@@ -52,4 +52,10 @@ public class LoginController {
             return "error";
         }
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("currentuser");
+        return "login";
+    }
 }
