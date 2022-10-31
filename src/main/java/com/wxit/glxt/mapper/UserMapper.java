@@ -18,6 +18,9 @@ public interface UserMapper {
     // 根据id查询
     UserBean findByid(int id);
 
+    // 根据用户名查询
+    List<UserBean> findByuserName(String userName);
+
     // 删除
     int delUser(int id);
 

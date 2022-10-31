@@ -9,8 +9,8 @@
         请输入密码:<input id="pass" name="pass" type="text" th:value="${User.userPass}"><br><br>
         请选择身份:<select id="role" name="role">
         <option th:value="${User.userRole}" selected><p th:text="${User.userRole}"></option>
-        <optin value="管理员">管理员</optin>
-        <optin value="普通用户">普通用户</optin>
+        <option value="管理员">管理员</option>
+        <option value="普通用户">普通用户</option>
     </select><br><br>
         <input type="submit" value="修改">
         <button name="button" onclick="javascript:history.go(-1);">返回</button>

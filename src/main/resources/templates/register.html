@@ -66,13 +66,13 @@
         // alert("爱好: " + love)
 
         if (password === password2) {
-            alert("两次密码一致");
+            // alert("两次密码一致");
             $.post("/goregister", {name: name, password: password}, function (result) {
                 if (result == true) {
                     alert("注册成功!");
                     window.location.href = "/login";
                 } else {
-                    alert("注册失败!");
+                    alert("注册失败! 用户名重复！");
                 }
             })
         }else{

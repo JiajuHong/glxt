@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="publicpage(title='查询编辑')">
+<meta charset="UTF-8">
+<div th:fragment="public_right">
+    <form action="/select" method="get">
+        <h2>查询页面</h2>
+        <!--        <input type="hidden" name="id" id="id" th:value="${User.id}"><br><br>-->
+        请输入姓名:<input id="name" name="name" type="text"><br><br>
+        <input type="submit" value="查询">
+        <button name="button" onclick="javascript:history.go(-1);">返回</button>
+    </form>
+</div>
+</html>

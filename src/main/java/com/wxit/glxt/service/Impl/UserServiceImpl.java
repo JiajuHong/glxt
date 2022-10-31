@@ -38,7 +38,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int register(UserBean users) {
-        return userMapper.register(users);
+        List<UserBean> userList = userMapper.findByuserName(users.getUserName());
+
+        // 判断用户名是否重复
+        if (userList.isEmpty()) {
+            return userMapper.register(users);
+        } else {
+            return -1;
+        }
+
     }
 
     @Override
@@ -54,5 +62,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserBean findByid(int id) {
         return userMapper.findByid(id);
+    }
+
+    @Override
+    public List<UserBean> findByuserName(String userName) {
+        return userMapper.findByuserName(userName);
     }
 }

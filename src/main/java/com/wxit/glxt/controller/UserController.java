@@ -27,7 +27,6 @@ public class UserController {
         users.setUserName(uname);
         users.setUserPass(upass);
         users.setUserRole("普通用户");
-        userServiceImpl.register(users);
-        return 1;
+        return userServiceImpl.register(users);
     }
 }

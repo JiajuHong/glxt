@@ -21,4 +21,7 @@ public interface UserService {
 
     UserBean findByid(int id);
 
+    // 根据用户名查询
+    List<UserBean> findByuserName(String userName);
+
 }

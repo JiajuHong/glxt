@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${title}">Title</title>
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css">
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -46,7 +47,15 @@
                                     <li><a href="#">查询三</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/edituser">编辑 <span class="sr-only">(current)</span></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">编辑 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/edituser">编辑</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/goselect">查询编辑</a></li>
+                                </ul>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#" th:text="'用户名：' + ${session.currentuser}">用户名</a></li>

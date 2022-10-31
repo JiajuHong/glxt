@@ -16,10 +16,19 @@
             <td th:text="${User.userPass}"></td>
             <td th:text="${User.userRole}"></td>
             <td>
-                <a th:href="@{'/godel/'+${User.id}}">删除</a>
+                <a th:href="@{'/godel/'+${User.id}}" onclick="return del();">删除</a>
                 <a th:href="@{'/goupdate/'+${User.id}}">修改</a>
             </td>
         </tr>
     </table>
+
+    <!--    删除前确认-->
+    <script type="text/javascript">
+        function del() {
+            if (!confirm("确认要删除？")) {
+                return false;
+            }
+        }
+    </script>
 </div>
 </html>

@@ -60,4 +60,15 @@ public class MyController {
         return "redirect:/edituser";
     }
 
+    @GetMapping("/goselect") // 查询界面
+    public String goselect() {
+        return "findUser";
+    }
+
+    @GetMapping("/select") // 根据用户名查询
+    public String select(Model m, @RequestParam("name") String userName) {
+        List<UserBean> userList = userServiceImpl.findByuserName(userName);
+        m.addAttribute("Result", userList);
+        return "edituser";
+    }
 }

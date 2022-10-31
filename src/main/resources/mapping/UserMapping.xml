@@ -11,6 +11,10 @@
         select * from tbluser where id = #{id}
     </select>
 
+    <select id="findByuserName" resultType="com.wxit.glxt.model.domain.UserBean">
+        select * from tbluser where userName = #{userName}
+    </select>
+
     <select id="login" resultType="com.wxit.glxt.model.domain.UserBean">
         select * from tbluser where userName = #{userName} and userPass = #{userPass}
     </select>
