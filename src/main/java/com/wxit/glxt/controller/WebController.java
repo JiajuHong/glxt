@@ -123,4 +123,19 @@ public class WebController {
         return UserList;
     }
 
+    // 饼图
+    @GetMapping("/topie")
+    public String topie() {
+        return "pie";
+    }
+
+    @RequestMapping("/gopie")
+    @ResponseBody
+    public List gopie(Model m) {
+        List UserList = contactServiceImpl.contDuty();
+        m.addAttribute("Result", UserList);
+        System.out.println(UserList);
+        return UserList;
+    }
+
 }

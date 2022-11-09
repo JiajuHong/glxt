@@ -24,4 +24,9 @@ public class ContactServiceImpl implements ContactService {
     public List contChart() {
         return contactMapper.contChart();
     }
+
+    @Override
+    public List contDuty() {
+        return contactMapper.contDuty();
+    }
 }

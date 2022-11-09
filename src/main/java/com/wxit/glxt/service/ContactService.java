@@ -7,4 +7,6 @@ public interface ContactService {
     List contTable();
 
     List contChart();
+
+    List contDuty();
 }

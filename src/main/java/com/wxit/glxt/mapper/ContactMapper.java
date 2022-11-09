@@ -9,4 +9,6 @@ public interface ContactMapper {
     List contTable();
 
     List contChart();
+
+    List contDuty();
 }
